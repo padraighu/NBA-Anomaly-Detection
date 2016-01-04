@@ -1,0 +1,25 @@
+﻿Project: Anomaly Detection 
+
+What is it?
+Assemble daily player stats from NBA, and compare them with the averages. From that, we find anomalies, or outliers of stats and highlight them. 
+
+What is an outlier?
+First for each player's certain stats (e.g. points) draw a box plot, and then add the daily stat to the box plot, if it is an outlier (see full definition below), highlight it. What this also means is that you can either ourperform OR underperform (e.g. get more rebounds or fewer rebounds than usual) to become an outlier.  
+
+Full definition of outliers 
+The "interquartile range", abbreviated "IQR", is just the width of the box in the box-and-whisker plot. That is, IQR = Q3 – Q1. 
+An outlier is any value that lies more than one and a half times the length of the box from either end of the box. That is, if a data point is below Q1 – 1.5×IQR or above Q3 + 1.5×IQR, it is viewed as being too far from the central values to be reasonable. (http://www.purplemath.com/modules/boxwhisk3.htm)
+
+What stats do we monitor? 
+
+How do we accomplish the whole thing?
+0. Get the base data.
+1. Scrape daily stats from a certain website(need to determine which one later)
+2. Store it in the updated local csv files, which contain the aggregated daily stats of each player. 
+3. For each player, for each stat category, determine if the current data is an outlier by calculating the IQR.
+4. Record players that have outlier(s) and the specific stats.
+
+Still need to consider DNP problems.
+Also consider 2015 and 2016. fixed. 
+Treat players lacking game log urls on ESPN differently. fixed. Right now we just skip them.
+Also players' teams change! Think of a better way to represent historical data. (But then it doesn't matter since they're "historical"?)
