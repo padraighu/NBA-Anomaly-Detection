@@ -1,8 +1,9 @@
 import csv 
 from os import chdir
+from helper import PATH, TEST_PATH
 
-path = "C:\Users\Administrator\Desktop\\anomaly detection\csv files"
-testpath = "C:\Users\Administrator\Desktop\\anomaly detection\\test"
+path = PATH
+testpath = TEST_PATH
 chdir(path)
 
 def register():

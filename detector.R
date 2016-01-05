@@ -1,3 +1,6 @@
+csv_path <- "C:\\Users\\Administrator\\Desktop\\anomaly detection\\csv files"
+log_path <- "C:\\Users\\Administrator\\Desktop\\anomaly detection\\logs\\"
+
 valid_csv <- function(csv_file){
   valid <- TRUE 
   if(length(csv_file[, "PTS"]) == 0){
@@ -24,7 +27,7 @@ get_info <- function(file_name, csv_file, col, category){
 }
 
 detect <- function(file_name){
-  to_write <- paste("C:\\Users\\Administrator\\Desktop\\anomaly detection\\logs\\",
+  to_write <- paste(log_path,
                as.character(Sys.Date() - 1), ".txt", sep="")
   ## Detect statistical anamolies with a given csv file.
   csv_file <- read.csv(file_name)
@@ -67,7 +70,7 @@ detect <- function(file_name){
 }
 
 detect_all <- function(){
-  directory <- "C:\\Users\\Administrator\\Desktop\\anomaly detection\\csv files"
+  directory <- csv_path
   setwd(directory)
   file_lst <- list.files(path=directory)
   for(file_name in file_lst){

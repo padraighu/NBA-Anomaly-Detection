@@ -1,5 +1,8 @@
 from os import listdir
 
+PATH = "C:\Users\Administrator\Desktop\\anomaly detection\csv files"
+TEST_PATH = "C:\Users\Administrator\Desktop\\anomaly detection\\test"
+
 def get_date(str_texts):
 	"""
 	Get the game date with the given string.
@@ -94,9 +97,9 @@ def check_existing_csv():
 	Return a list of players' names so that the scraper will
 	skip those players because they're already scraped. 
 	"""
-	path = "C:\Users\Administrator\Desktop\\anomaly detection\csv files"
-	testpath = "C:\Users\Administrator\Desktop\\anomaly detection\\test"
-	names = listdir(path)
+	#path = "C:\Users\Administrator\Desktop\\anomaly detection\csv files"
+	#testpath = "C:\Users\Administrator\Desktop\\anomaly detection\\test"
+	names = listdir(PATH)
 	#print len(names)
 	result = []
 	for name in names:
